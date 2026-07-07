@@ -8,3 +8,6 @@ Content-Type: application/json
 }
 ### get all users
 GET http://localhost:3000/auth/users HTTP//1.1
+### get a user
+GET http://localhost:3000/auth/users/9 HTTP//1.1
+

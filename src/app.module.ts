@@ -4,6 +4,7 @@ import { ReportModule } from './reports/report.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from './users/user.entity';
 @Module({
   imports: [
     UserModule,
@@ -12,7 +13,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       type: 'better-sqlite3',
       database: 'db.sqlite',
       synchronize: true,
-      entities: [],
+      entities: [User],
     }),
   ],
   controllers: [AppController],

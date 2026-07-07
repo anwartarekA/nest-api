@@ -9,12 +9,20 @@ export class UserService {
     const user = this.repo.create({ email, password });
     return this.repo.save(user);
   }
-  find(email: string) {
-    return this.repo.find({ where: { email } });
+  async find(email: string) {
+    const users = await this.repo.find({ where: { email } });
+    if (!users) throw new NotFoundException('no users found');
+    return users;
   }
   async findOne(id: number) {
     const user = await this.repo.findOneBy({ id });
     if (!user) throw new NotFoundException('no user found');
     return user;
+  }
+  async update(id: number, attrs: Partial<User>) {
+    const user = await this.findOne(id);
+    if (!user) throw new NotFoundException('no user found');
+    Object.assign(user, attrs);
+    return this.repo.save(user);
   }
 }

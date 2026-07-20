@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ### get all users
-GET http://localhost:3000/auth/users HTTP//1.1
+GET http://localhost:3000/auth?email=anwar12@gmail.com HTTP//1.1
 
 ### get a user
 GET http://localhost:3000/auth/4 HTTP//1.1

@@ -22,15 +22,15 @@ export class UserController {
     return this.userService.find(query);
   }
   @Get('/:id')
-  findUser(@Param('id') id: number) {
-    return this.userService.findOne(id);
+  findUser(@Param('id') id: string) {
+    return this.userService.findOne(parseInt(id));
   }
   @Patch('/:id')
-  updateUser(@Param('id') id: number, @Body() body: any) {
-    return this.userService.update(id, body);
+  updateUser(@Param('id') id: string, @Body() body: any) {
+    return this.userService.update(parseInt(id), body);
   }
   @Delete('/:id')
-  removeUSer(@Param('id') id: number) {
-    return this.userService.remove(id);
+  removeUSer(@Param('id') id: string) {
+    return this.userService.remove(parseInt(id));
   }
 }

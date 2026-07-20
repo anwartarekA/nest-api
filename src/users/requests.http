@@ -11,18 +11,18 @@ Content-Type: application/json
 GET http://localhost:3000/auth?email=anwar12@gmail.com HTTP//1.1
 
 ### get a user
-GET http://localhost:3000/auth/4 HTTP//1.1
+GET http://localhost:3000/auth/9 HTTP//1.1
 
 ### update user
-PATCH http://localhost:3000/auth/4 HTTP//1.1
+PATCH http://localhost:3000/auth/9 HTTP//1.1
 Content-Type: application/json
 
 {
-  "email":"anwarTarek@gmail.com",
-  "password":"anwar"
+  "email":"anwar@gmail.com",
+  "password":"1111"
 
 }
 
 ### delete user
-DELETE http://localhost:3000/auth/8
+DELETE http://localhost:3000/auth/12
   

@@ -7,11 +7,14 @@ import {
   Patch,
   Delete,
   Query,
+  UseInterceptors,
+  ClassSerializerInterceptor,
 } from '@nestjs/common';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UserService } from './user.service';
 import { UpdateUserDto } from './dtos/update-user.dto';
 @Controller('auth')
+@UseInterceptors(ClassSerializerInterceptor)
 export class UserController {
   constructor(private userService: UserService) {}
   @Post('/signup')

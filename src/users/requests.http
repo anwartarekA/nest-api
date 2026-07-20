@@ -20,9 +20,7 @@ Content-Type: application/json
 {
   "email":"anwar9@gmail.com",
   "password":"1111"
-
 }
 
 ### delete user
 DELETE http://localhost:3000/auth/10
-  

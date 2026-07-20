@@ -16,7 +16,7 @@ import { SerializeInterceptor } from '../interceptors/serialize.interceptor';
 import { UserDto } from './dtos/user.dto';
 import { serialize } from '../interceptors/serialize.interceptor';
 @Controller('auth')
-@UseInterceptors(serialize(UserDto))
+@serialize(UserDto)
 export class UserController {
   constructor(private userService: UserService) {}
   @Post('/signup')
